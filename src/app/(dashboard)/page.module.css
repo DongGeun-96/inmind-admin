@@ -1,0 +1,67 @@
+.pageTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.statCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.statIconWrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statIconBlue {
+  composes: statIconWrap;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--color-accent);
+}
+
+.statIconGreen {
+  composes: statIconWrap;
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--color-success);
+}
+
+.statIconYellow {
+  composes: statIconWrap;
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--color-warning);
+}
+
+.statIconRed {
+  composes: statIconWrap;
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--color-danger);
+}
+
+.statValue {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.statLabel {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
