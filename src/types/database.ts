@@ -29,6 +29,7 @@ export interface User {
   username?: string | null;
   created_at: string;
   is_banned: boolean;
+  is_email_confirmed: boolean;
   role: 'user' | 'admin';
 }
 

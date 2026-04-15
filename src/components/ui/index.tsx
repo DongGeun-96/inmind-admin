@@ -66,14 +66,16 @@ export function ActionGroup({ children }: { children: ReactNode }) {
 export function ActionButton({
   variant = 'default',
   onClick,
+  disabled,
   children,
 }: {
   variant?: ActionVariant;
   onClick?: () => void;
+  disabled?: boolean;
   children: ReactNode;
 }) {
   return (
-    <button className={actionMap[variant]} onClick={onClick}>
+    <button className={actionMap[variant]} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

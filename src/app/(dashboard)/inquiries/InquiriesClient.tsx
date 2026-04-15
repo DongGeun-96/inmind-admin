@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import DOMPurify from 'dompurify';
+import createDOMPurify from 'dompurify';
+
+const DOMPurify = typeof window !== 'undefined' ? createDOMPurify(window) : null;
 import { Send } from 'lucide-react';
 import { timeAgo, formatDate } from '@/lib/format';
 import type { Inquiry } from '@/types/database';
@@ -54,7 +56,7 @@ export default function InquiriesClient({ inquiries: initialInquiries }: { inqui
                   <span className={styles.date}>{timeAgo(inq.created_at)}</span>
                 </div>
                 <h3 className={styles.title}>{inq.title}</h3>
-                <div className={styles.content} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(inq.content) }} />
+                <div className={styles.content} dangerouslySetInnerHTML={{ __html: DOMPurify?.sanitize(inq.content) ?? inq.content }} />
 
                 {inq.reply && (
                   <div className={styles.reply}>
