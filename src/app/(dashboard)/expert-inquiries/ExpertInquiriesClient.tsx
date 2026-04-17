@@ -47,7 +47,7 @@ export default function ExpertInquiriesClient({ inquiries: initialInquiries }: {
                     <Badge variant={inq.status === 'answered' ? 'success' : 'warning'}>
                       {inq.status === 'answered' ? '답변완료' : '대기중'}
                     </Badge>
-                    <Badge variant={inq.expert_type === 'hospital' ? 'info' : 'default'}>
+                    <Badge variant={inq.expert_type === 'hospital' ? 'info' : 'success'}>
                       {inq.expert_type === 'hospital' ? '병원/센터' : '개인 상담사'}
                     </Badge>
                     <span className={styles.name}>{inq.name}</span>
