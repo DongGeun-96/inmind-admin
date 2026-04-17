@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard, Users, FileText, AlertTriangle,
-  Headphones, LogOut, Shield, Megaphone,
+  Headphones, LogOut, Shield, Megaphone, UserPlus,
 } from 'lucide-react';
 import { createClient } from '@/lib/supabase-client';
 import styles from './Sidebar.module.css';
@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { href: '/notices', label: '공지 관리', icon: Megaphone },
   { href: '/reports', label: '신고 관리', icon: AlertTriangle },
   { href: '/inquiries', label: '문의 관리', icon: Headphones },
+  { href: '/expert-inquiries', label: '전문가 등록 문의', icon: UserPlus },
 ];
 
 export default function Sidebar() {

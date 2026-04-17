@@ -1,4 +1,4 @@
-import { Users, FileText, MessageCircle, AlertTriangle, Headphones } from 'lucide-react';
+import { Users, FileText, MessageCircle, AlertTriangle, Headphones, UserPlus } from 'lucide-react';
 import { createAdminClient } from '@/lib/supabase-admin';
 import styles from './page.module.css';
 
@@ -12,6 +12,7 @@ export default async function DashboardPage() {
   const { count: commentCount } = await supabase.from('comments').select('*', { count: 'exact', head: true });
   const { count: reportCount } = await supabase.from('reports').select('*', { count: 'exact', head: true }).eq('is_handled', false);
   const { count: inquiryCount } = await supabase.from('inquiries').select('*', { count: 'exact', head: true }).eq('status', 'pending');
+  const { count: expertInquiryCount } = await supabase.from('expert_inquiries').select('*', { count: 'exact', head: true }).eq('status', 'pending');
 
   const stats = [
     { label: '전체 회원', value: userCount || 0, icon: Users, color: 'statIconBlue' },
@@ -19,6 +20,7 @@ export default async function DashboardPage() {
     { label: '전체 댓글', value: commentCount || 0, icon: MessageCircle, color: 'statIconBlue' },
     { label: '미처리 신고', value: reportCount || 0, icon: AlertTriangle, color: 'statIconRed' },
     { label: '미답변 문의', value: inquiryCount || 0, icon: Headphones, color: 'statIconYellow' },
+    { label: '전문가 등록 문의', value: expertInquiryCount || 0, icon: UserPlus, color: 'statIconGreen' },
   ];
 
   return (
