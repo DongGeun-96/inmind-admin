@@ -123,3 +123,16 @@ export const CATEGORIES = [
   { name: '힐링플레이스', boards: ['healing_food', 'healing_place', 'healing_book', 'healing_movie', 'healing_quote', 'healing_etc'] as BoardType[] },
   { name: '커뮤니티', boards: ['community_free', 'tips'] as BoardType[] },
 ];
+
+export interface ExpertInquiry {
+  id: string;
+  name: string;
+  phone: string;
+  email: string | null;
+  affiliation: string | null;
+  content: string;
+  reply: string | null;
+  status: 'pending' | 'answered';
+  created_at: string;
+  replied_at: string | null;
+}
