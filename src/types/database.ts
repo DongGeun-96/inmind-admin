@@ -126,6 +126,7 @@ export const CATEGORIES = [
 
 export interface ExpertInquiry {
   id: string;
+  expert_type: 'hospital' | 'counselor';
   name: string;
   phone: string;
   email: string | null;
